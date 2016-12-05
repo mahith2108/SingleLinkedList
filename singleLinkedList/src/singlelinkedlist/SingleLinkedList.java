@@ -103,7 +103,31 @@ public class SingleLinkedList<T> {
        tmp=tmp.getNextRef();
     }
    
- }   
+ }
+    
+    public void delete(T val){
+    
+      Node<T> tmp=head;
+      Node<T> tmp1=null;
+           
+      while(true){
+          
+         if(tmp==null){
+             
+            break;
+         }
+         
+         if(tmp.getValue()==val){
+             
+             tmp1.setNextRef(tmp.getNextRef());
+             break;
+         }
+          tmp1=tmp;
+          tmp=tmp.getNextRef();
+    
+       }
+    }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -113,7 +137,7 @@ public class SingleLinkedList<T> {
     s.add(6);
     s.addAfter(5,4);
     s.addAfter(6,8);
-    s.deleteAfter(6);
+    s.delete(6);
     s.deleteAfter(4);
     s.traverse();
     
